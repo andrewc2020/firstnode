@@ -34,7 +34,7 @@ const getAge = _.curry(propExtractor('age'));
 
 people.sort(createSort(getWorked));
 
-console.log('sorted by worked:', people);
+console.log('sorted by worked:\n', people);
 
 people.sort(createSort(getName));
 
@@ -49,24 +49,24 @@ console.log('sorted by age:', people);
 people.sort(createSortDesc(getAge));
 
 
-console.log('sorted by age desc:', people);
+console.log('sorted by age desc:\n', people);
 
 people.sort(createSortDesc(getParent,getAge));
 
 
-console.log('sorted by parent age desc:', people);
+console.log('sorted by parent age desc:\n', people);
 
 
 
 people.sort(createSort(getParent,getAge));
 
-console.log('sorted by parent\'s age', people);
+console.log('sorted by parent\'s age\n', people);
 
 
 people.sort(createSort(getParent,getWorked));
 
-console.log('sorted by parent\'s years spent working', people);
+console.log('sorted by parent\'s years spent working\n', people);
 
 people.sort(createSort(getWorked,getName));
 
-console.log('sorted by years spent working then name', people);
+console.log('sorted by years spent working then name\n', people);
