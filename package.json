@@ -1,0 +1,14 @@
+{
+  "name": "firstnode",
+  "version": "1.0.0",
+  "description": "first node application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "andrew chudley",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
