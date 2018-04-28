@@ -1,35 +1,14 @@
-let _ = require('lodash');
-
-let dragons = []
-dragons.push({name : 'fluffikins',element : 'lightning'});
-dragons.push({name : 'noomi',element : 'lightning'});
-dragons.push({name : 'karo',element : 'fire'});
-dragons.push({name : 'doomer',element : 'timewarp'});
-
-
-console.log(dragons);
-
-let hasElement = _.curry(function(element,obj){
-    return obj.element === element;
-});
-
-let dragon = (name,size,element) =>
-    name + ' is a ' +
-    size + ' dragon that breathes ' +
-    element + '!'
-
-    console.log(dragon('fluffikins','tiny','lightning'));
-
-    let lightningdragons = dragons.filter(hasElement('lightning'));
-    console.log('filtered dragons',lightningdragons);
-
-
-    let currydragon = _.curry(dragon);
-      /*  name =>
-            size =>
-                element =>
-                name + ' is a ' +
-                size + ' dragon that breathes ' +
-                element + '!'; */
-
-                console.log(currydragon('fluffykins')('tiny')('lightning'));
+"use strict";
+exports.__esModule = true;
+var fs_1 = require("fs");
+var animals = [
+    { name: "fluffykins", species: "rabbit" },
+    { name: "Miralda", species: "cat" },
+    { name: "Marmaduke", species: "dog" }
+];
+var dogs = animals.filter(function (x) { return x.species == "dog"; });
+var output = fs_1.readFile('data.txt', 'utf8',function(){
+    console.log(output);
+})
+    
+console.log(dogs);
