@@ -13,7 +13,7 @@ function propExtractor(key) {
     };
 }
 var createSort = lodash_1._.curry(function (treat) {
-    return function (A, B) { return treat(A) - treat(B); };
+    return function (A, B) { return treat(A) > treat(B)? 1: -1; };
 });
 var createSortDesc = lodash_1._.curry(function (treat) {
     return function (A, B) { return treat(B) - treat(A); };
@@ -24,8 +24,8 @@ var getName = lodash_1._.curry(propExtractor('name'));
 var getAge = lodash_1._.curry(propExtractor('age'));
 people.sort(createSort(getWorked));
 console.log('sorted by worked:', people);
-// people.sort(createSort(getName));
-// console.log('sorted by name:', people);
+people.sort(createSort(getName));
+console.log('sorted by name:', people);
 people.sort(createSort(getAge));
 console.log('sorted by age:', people);
 people.sort(createSortDesc(getAge));

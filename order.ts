@@ -30,7 +30,7 @@ function propExtractor(key){
 let createSort = _.curry(function(treat){
     
     
-        return (A: number, B: number) => treat(A) > treat(B);
+        return (A: number, B: number) => treat(A) > treat(B)? 1: -1;
    
     
    
@@ -42,7 +42,7 @@ let createSort = _.curry(function(treat){
 
 
 let createSortDesc = _.curry(function(treat){
-    return (A,B) => treat(B) > treat(A);
+    return (A,B) => treat(B) > treat(A)? 1: -1;
 
 })
 
@@ -75,13 +75,13 @@ console.log('sorted by age desc:', people);
 people.sort(createSortDesc(getParent,getAge));
 
 
-console.log('sorted by parent age desc:', people);
+console.log('sorted by parent age:', people);
 
 
 
 people.sort(createSort(getParent,getAge));
 
-console.log('sorted by parent\'s age', people);
+console.log('sorted by parent\'s age Desc', people);
 
 
 people.sort(createSort(getParent,getWorked));
