@@ -30,7 +30,7 @@ function propExtractor(key){
 let createSort = _.curry(function(treat){
     
     
-        return (A: number, B: number) => treat(A) > treat(B)? 1: -1;
+        return (A:any, B: any) => treat(A) > treat(B)? 1: -1;
    
     
    
